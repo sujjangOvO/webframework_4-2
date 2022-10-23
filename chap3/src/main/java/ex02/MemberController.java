@@ -50,7 +50,14 @@ public class MemberController extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		
 		String action = request.getPathInfo();
-//		System.out.println("action: " + action);
+		
+		System.out.println("request.getPathInfo: " + request.getPathInfo());
+		System.out.println("request.getContextPath: " + request.getContextPath());
+		System.out.println("request.getQueryString: " + request.getQueryString());
+		System.out.println("request.getRequestURI: " + request.getRequestURI());
+		System.out.println("request.getRequestURL: " + request.getRequestURL());
+		System.out.println("request.getServerName: " + request.getServerName());
+		System.out.println("request.getServletPath: " + request.getServletPath());
 		
 		if(action.equals("/login.do") && request.getMethod().equalsIgnoreCase("GET")) {
 			forwardReq(request, response, "/ex02/login.jsp");
